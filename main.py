@@ -2,7 +2,7 @@ import streamlit as st
 from driver import read_query
 
 
-
+st.set_page_config(page_title="DENT", page_icon=":tooth:")
 
 st.title("DENTUXO")
 
