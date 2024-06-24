@@ -128,14 +128,18 @@ def app():
     with col2:
         with st.container(border=True):
             # if "analysis_results" in ss:
-            if ss.rule_1_bool == False:
+            if ("rule_1_bool" in ss) and (ss.rule_1_bool == False):
                 st.warning("PROBLEMS")
                 st.dataframe(ss.rule_1_table)
+            else:
+                st.markdown("![Alt Text](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2tsanE1MnJpcmc3ZzBwd2EwaWkzN3llNzhreDhqZmg3Nm9rdXVwaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEhmMqQdJdwFzgoHC/giphy.gif)")
+                
     with col3:
         with st.container(border=True):
             # st.write(ss)
-            if ss.rule_1_bool == False:
-                st.warning("Rule Infringed")
+            st.warning("Info")
+            if ("rule_1_bool" in ss) and (ss.rule_1_bool == False):
+                st.warning("Rules Infringed")
                 st.markdown(ss.rule_1_text)
 
 
