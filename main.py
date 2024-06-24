@@ -23,7 +23,7 @@ def remove_item(item):
 
 def check_items():
     
-    ss.rule_1_bool, ss.rule_1_text = rule_1_check(codes_list=ss.selected_items)
+    ss.rule_1_bool, ss.rule_1_table, ss.rule_1_text = rule_1_check(codes_list=ss.selected_items)
 
    
 
@@ -61,10 +61,12 @@ def update_name():
 
 
 def app():
+
+
     st.markdown("<h1 style='text-align: center; color: pink;'>DENTUXO</h1>", unsafe_allow_html=True)
 
-    # col1, col2, col3 = st.columns([1,2,2])
-    col1, col2 = st.columns([3,7])
+    col1, col2, col3 = st.columns([1,4,1])
+    # col1, col2 = st.columns([3,7])
 
     with col1:
         with st.container():
@@ -125,13 +127,16 @@ def app():
 
     with col2:
         with st.container(border=True):
-            if "analysis_results" in ss:
-                if ss.rule_1_bool == False:
-                    st.warning("PROBLEMS")
-                    st.dataframe(ss.rule_1_text)
-    # with col3:
-    #     with st.container(border=True):
-    #         st.write(ss)
+            # if "analysis_results" in ss:
+            if ss.rule_1_bool == False:
+                st.warning("PROBLEMS")
+                st.dataframe(ss.rule_1_table)
+    with col3:
+        with st.container(border=True):
+            # st.write(ss)
+            if ss.rule_1_bool == False:
+                st.warning("Rule Infringed")
+                st.markdown(ss.rule_1_text)
 
 
 if __name__ == "__main__":

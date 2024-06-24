@@ -16,7 +16,10 @@ def rule_1_check(codes_list):
     """
     Single act vs Procedure
     """
-
+    rule_1 = """Il peut d'agir d'un Acte ISOLE ou d'une PROCEDURE, c'est-a-dire un ensemble d'actes isoles, realises ensembe. Le practicien doir coder en choisissant 
+    la modalite la plus ssimples, la plus complete et la ples synthetique de decription de l'acte realise.
+    """
+    
     # Define a function to check patterns using regex
     def check_numbers(text):
         if pd.isna(text):
@@ -61,11 +64,11 @@ return tt.code as tt_code, tt.name as tt_name, cat.name as cat_name
         # for cat, group in final_df.groupby('cat'):
         #     result_dict[cat] = group.to_dict(orient='records')
 
-        return False,final_df
+        return False,final_df,rule_1
         
         
     else:
 
-        return True,"No probs"
+        return True,"No probs", "rule 1 ok"
 
 
